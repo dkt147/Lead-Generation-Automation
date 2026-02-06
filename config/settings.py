@@ -4,11 +4,13 @@ Loads and validates environment variables for all API integrations.
 """
 
 import os
+from pathlib import Path
 from dataclasses import dataclass
 from dotenv import load_dotenv
 
-# Load environment variables from .env file
-load_dotenv()
+# Load .env from project root (works regardless of working directory)
+env_path = Path(__file__).resolve().parent.parent / ".env"
+load_dotenv(env_path)
 
 
 @dataclass
