@@ -11,6 +11,7 @@ import io
 import logging
 import sys
 from datetime import datetime
+import os
 
 # Setup logging to capture module logs
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -26,8 +27,8 @@ from modules.email_outreach import EmailOutreachService, preview_email
 st.set_page_config(page_title="Lead Generation Tool", page_icon="briefcase", layout="wide")
 
 # ── Simple login ──
-USERNAME = "admin"
-PASSWORD = "lead2026"
+USERNAME = st.secrets["app"]["username"]  
+PASSWORD = st.secrets["app"]["password"]  
 
 if "logged_in" not in st.session_state:
     st.session_state.logged_in = False
