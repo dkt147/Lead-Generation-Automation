@@ -1,0 +1,87 @@
+# Environment
+.env
+.env.*
+venv/
+.venv/
+ENV/
+env/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+.eggs/
+
+# Jupyter / Notebooks
+.ipynb_checkpoints/
+*.ipynb
+
+# Logs
+*.log
+logs/
+nohup.out
+
+# Exports / Generated Data
+leads_*.csv
+leads_*.json
+data/
+outputs/
+results/
+exports/
+
+# AI / LLM related
+.cache/
+cache/
+embeddings/
+vectorstore/
+chroma/
+faiss/
+pinecone/
+openai_logs/
+*.pkl
+*.joblib
+
+# Secrets & keys
+*.key
+*.pem
+*.crt
+secrets/
+credentials.json
+
+# IDEs & Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+*.bak
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Build / Distribution
+build/
+dist/
+*.whl
+
+# Web frameworks
+node_modules/
+staticfiles/
+media/
+uploads/
+
+
+.claude/
+
+# Testing
+.coverage
+.pytest_cache/
+htmlcov/
+
+# Docker
+*.env.docker
+docker-compose.override.yml

@@ -1,0 +1,17 @@
+[
+    {
+        "company_type": "solar energy installers",
+        "region": "Winnipeg, Manitoba",
+        "count": 5
+    },
+    {
+        "company_type": "SaaS startups",
+        "region": "Toronto, Ontario",
+        "count": 5
+    },
+    {
+        "company_type": "manufacturing companies",
+        "region": "Vancouver, British Columbia",
+        "count": 5
+    }
+]

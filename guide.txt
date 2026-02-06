@@ -1,0 +1,166 @@
+Technical Interview Project Brief
+AI-Powered Lead Generation & Outreach Automation
+Estimated Time: 16 hours
+Submission Deadline: Feb 13, 2026
+Project Overview
+Build a script/application that automates the lead generation and outreach process by:
+Using AI to discover companies matching specified criteria within a given region
+Retrieving contact information via Hunter.io
+Creating leads in Monday.com
+Sending automated introduction emails
+This project evaluates your ability to integrate multiple APIs, work with AI services, handle data flows, and build reliable automation workflows.
+Functional Requirements
+1. Company Discovery (AI-Powered Search)
+Input Parameters:
+company_type - Industry or business type (e.g., "solar energy installers", "manufacturing companies", "SaaS startups")
+region - Geographic area (e.g., "Winnipeg, Manitoba", "Greater Toronto Area", "British Columbia")
+count - Number of companies to find (default: 10, max: 50)
+Expected Behavior:
+Use an AI service (OpenAI, Anthropic, Perplexity, or similar) to search for and identify real companies matching the criteria
+Return structured data including: company name, website, brief description, and any available contact information
+Handle edge cases where limited results are available
+AI Provider: Candidate's choice (OpenAI, Anthropic, Google AI, Perplexity, or other). Justify your selection.
+2. Contact Enrichment (Hunter.io Integration)
+Required Functionality:
+For each discovered company, use Hunter.io's API to:
+Find email addresses associated with the company domain
+Identify decision-makers (prioritize: CEO, Founder, Owner, Director, Manager)
+Retrieve name, position, and email confidence score
+Implement rate limiting to respect API constraints
+Handle cases where no contacts are found gracefully
+Hunter.io API: Use their free tier (25 requests/month for testing). Document how the solution would scale with a paid plan.
+3. CRM Integration (Monday.com)
+Required Functionality:
+Create a new item in a specified Monday.com board for each qualified lead
+Populate the following fields (create columns as needed):
+Company Name
+Website/Domain
+Contact Name
+Contact Email
+Contact Position
+Company Description
+Region
+Lead Source (mark as "AI Discovery")
+Status (default: "New Lead")
+Date Added
+Prevent duplicate entries (check if company/email already exists)
+4. Email Outreach (Introduction Email)
+Required Functionality:
+Trigger an introduction email to the discovered contact
+Email should be:
+Personalized with contact name and company name
+Professional and concise
+Customizable via template (support placeholder variables)
+Implementation options (choose one):
+Direct SMTP integration
+SendGrid/Mailgun API
+Monday.com email integration
+Other email service API
+Log email sent status back to Monday.com record
+Email Template Example:
+Subject: Quick Introduction - [Your Company] + {{company_name}}
+
+Hi {{contact_name}},
+
+I came across {{company_name}} while researching {{company_type}} companies in {{region}} and wanted to reach out.
+
+[Customizable body paragraph]
+
+Would you be open to a brief conversation?
+
+Best regards,
+[Sender Name]
+
+Technical Requirements
+Code Quality
+Clean, readable, well-documented code
+Proper error handling throughout
+Logging for debugging and monitoring
+Configuration management (no hardcoded API keys)
+Architecture
+Modular design with clear separation of concerns
+Each integration (AI, Hunter, Monday, Email) should be its own module/service
+Easy to extend or swap out individual components
+Configuration
+Provide a configuration file or environment variables for:
+API keys (all services)
+Monday.com board ID and column mappings
+Email template and sender information
+Default search parameters
+Documentation
+Include a README with:
+Setup instructions
+Environment variable requirements
+How to run the script
+Example usage
+Known limitations
+Ideas for future improvements
+Deliverables
+Source Code - Complete, runnable codebase (GitHub repository preferred)
+README.md - Comprehensive documentation
+Configuration Template - .env.example or similar
+Demo Video (optional but recommended) - 5-10 minute walkthrough showing:
+Running the script with sample inputs
+Results appearing in Monday.com
+Email being triggered
+Brief Write-up (1-2 pages) covering:
+Technical decisions and trade-offs
+Challenges encountered and solutions
+How you would improve/scale this solution
+Time breakdown of how you spent the 16 hours
+Evaluation Criteria
+Criteria
+Weight
+Description
+Functionality
+30%
+Does it work? Does it meet all requirements?
+Code Quality
+25%
+Clean, maintainable, well-structured code
+Error Handling
+15%
+Graceful handling of edge cases and failures
+Documentation
+15%
+Clear setup instructions and code comments
+Architecture
+10%
+Modular, extensible design
+Bonus Points
+5%
+Creative solutions, extra features, exceptional polish
+
+
+Bonus Points (Optional)
+Consider implementing any of these for extra credit:
+Retry Logic - Automatic retries with exponential backoff for API failures
+Batch Processing - Process multiple company types/regions in one run
+Deduplication - Smart matching to avoid re-contacting existing leads
+CLI Interface - User-friendly command-line interface with argument parsing
+Progress Reporting - Real-time progress updates during execution
+Export Options - CSV/JSON export of discovered leads
+AI-Generated Emails - Use AI to personalize email content per lead
+Scheduling - Built-in scheduler for recurring searches
+Dashboard/UI - Simple web interface to configure and run searches
+Resources & API Documentation
+Hunter.io API: https://hunter.io/api-documentation/v2
+Monday.com API: https://developer.monday.com/api-reference/docs
+OpenAI API: https://platform.openai.com/docs
+Anthropic API: https://docs.anthropic.com/
+Perplexity API: https://docs.perplexity.ai/
+Submission Instructions
+Push your code to a GitHub repository (public or private with access granted)
+Include all deliverables in the repository
+Email the repository link to [Insert Email] by [Insert Deadline]
+Include any credentials needed to test (use test/sandbox accounts where possible)
+Questions?
+If you have questions or need clarification on any requirements, please reach out to [Insert Contact] at [Insert Email]. We're happy to provide guidance while still allowing you to demonstrate independent problem-solving.
+Notes
+Focus on building a working solution first, then refine
+It's acceptable to use AI coding assistants (GitHub Copilot, Claude, etc.) - just be prepared to explain your code
+Free tiers of APIs are sufficient for demonstrating functionality
+If you run into API limitations, document what you would do differently with full access
+We value thoughtful trade-offs over perfect implementations
+Good luck! We look forward to seeing your solution.
+
